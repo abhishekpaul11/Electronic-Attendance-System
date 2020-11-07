@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/attendance.css')}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body background="{{ url_for('static', filename='images/attendance.png')}}" style="background-repeat:no-repeat;background-size: auto;background-position-x: center;background-position-y: 50px;">
+    <input type="text" id="reg"><br>
+    <button id='bttn' onclick='add()'></button>
+</body>
+<script>
+    var pass;
+    function initFingerprintJS() {
+        FingerprintJS.load().then(fp => {
+        fp.get().then(result => {
+            const visitorId = result.visitorId;
+            pass = visitorId;
+        });
+        });
+    }
+    function add(){
+        var num = document.getElementById('reg').value
+        $.ajax({
+            url: "/add",
+            type: "POST",
+            data: {
+                number: num,
+                fp: pass,
+            },
+            success: function(ans){
+                window.location.href="/sub/"+ans
+            }
+        });
+    }
+</script>
+<script
+  async
+  src="https://cdn.jsdelivr.net/npm/@fingerprintjs/fingerprintjs@3/dist/fp.min.js"
+  onload="initFingerprintJS()"
+></script>
+</html>

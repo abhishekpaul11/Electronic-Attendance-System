@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/teacher.css')}}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat;display=swap" rel="stylesheet"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body background="{{ url_for('static', filename='images/teacher.png')}}" style="background-repeat:no-repeat;background-size: auto;background-position-x: center;background-position-y: 0px;background-color: #f6f6f6;">
+   <div id='name'>
+        <text id="faculty">{{name}}</text>
+   </div>
+   <div id='status'>
+        <text id="stat" style="color: {{col}}">{{status}}</text>
+   </div>
+   <div id='link'>
+        <a href="/"><text id="stat">{{'http://'+ip+':10001/'}}</text></a>
+    </div>
+   <button id='btn' style="margin-left: 166px;" onclick='window.location.href="/activate"'></button>
+   <button id='btn' style="margin-left: 117px;" onclick='window.location.href="/revoke"'></button>
+   <button id='btn' style="margin-left: 122px;" onclick=generate()></button>
+   <table id="details" style="width: 70%;margin-left: 14.5%;margin-top: 40px;">
+        <tr style="background-color: #48695c;">
+            <td style="width: fit-content;"><text id="header">Serial No.</text></td>
+            <td style="width: max-content;"><text id="header">Registration No.</text></td>
+            <td style="width: max-content;"><text id="header">Name</text></td>
+        </tr>
+        {% for i in dat %}
+            <tr>
+                {% for j in i %}
+                    <td><text id="data">{{j}}</text></td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+    <script>
+        function generate(){
+            if(window.confirm('Are you sure?')){
+                window.location.href='/generate'
+            }
+        }
+    </script>
+</body>
+</html>

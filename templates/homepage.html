@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/homepage.css')}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body background="{{ url_for('static', filename='images/homepage.png')}}" style="background-repeat:no-repeat;background-size: auto;background-position-x: center;background-position-y: 50px;">
+    <button id='bttn' onclick="window.location.href='/admin'"></button>
+    <button id="bttn1" onclick='window.location.href="/student"'></button>
+</body>
+</html>

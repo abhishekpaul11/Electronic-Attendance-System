@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/report.css')}}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat;display=swap" rel="stylesheet"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body background="{{ url_for('static', filename='images/report.png')}}" style="background-repeat:no-repeat;background-size: auto;background-position-x: center;background-position-y: 0px;background-color: #f6f6f6;">
+   <div id='name'>
+        <text id="faculty">{{name}}</text>
+   </div>
+   <select id='menu'>
+       <option value='all'>All</option>
+       <option value='pres'>Present</option>
+       <option value='abs'>Absent</option>
+   </select><br>
+   <button id='btn' onclick='filter()'></button>
+   <table id="details" style="width: 70%;margin-left: 14.5%;margin-top: 40px;">
+        <tr style="background-color: #48695c;">
+            <td style="width: fit-content;"><text id="header">#</text></td>
+            <td style="width: fit-content;"><text id="header">Reg No.</text></td>
+            <td style="width: max-content;"><text id="header">Name</text></td>
+            <td style="width: fit-content;"><text id="header">Time</text></td>
+            <td style="width: fit-content;"><text id="header">Status</text></td>
+        </tr>
+        {% for i in data %}
+        <tr style="background-color: {{i[0]+'50'}};">
+            {% for j in range(1,5)%}
+            <td><text id="data">{{i[j]}}</text></td>
+            {% endfor %}
+            <td><a href='{{url_for("toggle",id=i[1])}}' onclick='return confirm_alert(this)' style="text-decoration: none;"><text id="data" style="color: {{i[0]}};">{{i[5]}}</text></a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+<script>
+    document.getElementById('menu').selectedIndex='{{index}}'
+    function confirm_alert(node) {
+        return confirm("Change attendence for the selected student?");
+    }
+    function filter(){
+        var ch = document.getElementById('menu').value
+        switch(ch){
+            case 'all':
+                window.location.href='/all'
+                break
+            case 'pres':
+                window.location.href='/present'
+                break
+            case 'abs':
+                window.location.href='/absent'
+        }
+    }
+</script>
+</html>

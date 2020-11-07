@@ -1,0 +1,17 @@
+#bttn{
+    background-color: transparent;
+    margin-left: 160px;
+    margin-top: 18px;
+    height: 58px;
+    width: 274px;
+    border-radius: 10px;
+}
+#reg{
+    margin-top: 310px;
+    width: 510px;
+    height: 52px;
+    margin-left: 161px;
+    border-radius: 10px;
+    background-color: transparent;
+    font-size: 30px;
+}

@@ -1,0 +1,66 @@
+#name{
+    background-color: #f6f6f6;
+    margin-top: 40px;
+    margin-left: 125px;
+    width: fit-content;
+    height: 80px;
+}
+#faculty{
+    color: #132540;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 65px;
+}
+#status{
+    background-color: transparent;
+    margin-top: 27px;
+    margin-left: 49%;
+    height: 40px;
+    width: fit-content;
+}
+#stat{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+}
+#link{
+    background-color: transparent;
+    margin-top: 13px;
+    margin-left: 39%;
+    height: 40px;
+    width: fit-content;
+}
+#btn{
+    background-color: transparent;
+    margin-top: 24px;
+    width: 275px;
+    height: 59px;
+    border-radius: 15px;
+}
+#header{
+    font-size: 40px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    color: #f6f6f6;
+}
+th,td{
+    padding: 10px;
+}
+td{
+    text-align: center;
+}
+#data{
+    font-size: 30px;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    color: #132540;
+}
+#details tr:nth-child(even) {
+    background-color: #dd7f1e80	;
+}
+#details tr:nth-child(odd) {
+    background-color: #48695c80;
+}
+table, th, td {
+    border: 1px solid #132540;
+}

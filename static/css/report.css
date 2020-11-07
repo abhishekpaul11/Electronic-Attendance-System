@@ -1,0 +1,53 @@
+#name{
+    background-color: #f6f6f6;
+    margin-top: 40px;
+    margin-left: 125px;
+    width: fit-content;
+    height: 80px;
+}
+#faculty{
+    color: #132540;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 65px;
+}
+#menu{
+    margin-left: 620px;
+    margin-top: 20px;
+    width: 180px;
+    height: 59px;
+    border-radius: 15px;
+    color: #132540;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+}
+#btn{
+    background-color: transparent;
+    margin-top: 20px;
+    margin-left: 650px;
+    width: 122px;
+    height: 59px;
+    border-radius: 15px;
+}
+#header{
+    font-size: 40px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    color: #f6f6f6;
+}
+th,td{
+    padding: 10px;
+}
+td{
+    text-align: center;
+}
+#data{
+    font-size: 30px;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    color: #132540;
+}
+table, th, td {
+    border: 1px solid #132540;
+}
